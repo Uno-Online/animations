@@ -1,4 +1,5 @@
 const appCards = document.querySelector('#app .cards');
+
 const reloadBtn = document.createElement('button');
 reloadBtn.name = 'reload';
 reloadBtn.innerText = 'Restart animation';
@@ -44,3 +45,4 @@ class Game {
 }
 
 const game = new Game();
+game.preventHoldingImgs();
