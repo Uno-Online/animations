@@ -1,11 +1,27 @@
+const appCards = document.querySelector('#app .cards');
+const reloadBtn = document.createElement('button');
+reloadBtn.name = 'reload';
+reloadBtn.innerText = 'Restart animation';
+document.body.appendChild(reloadBtn);
+
 class Game {
     colors = ["yellow", "blue", "red", "green"];
     
     constructor() {
     }
 
+    generateCards(value) {
+        let i = 1;
+        while(i <= value) {
+            const img = document.createElement('img');
+            img.src = `assets/img/cards/uno.png`;
+            img.setAttribute('name', JSON.stringify({color: 'black', symbol: 'uno'})),
+            appCards.appendChild(img);
+            i++;
+        }
+    }
+
     generateRandomCards(value) {
-        const appCards = document.querySelector('#app .cards');
         let i = 1;
         while(i <= value) {
             const img = document.createElement('img');
@@ -28,5 +44,3 @@ class Game {
 }
 
 const game = new Game();
-game.generateRandomCards(7);
-game.preventHoldingImgs();
