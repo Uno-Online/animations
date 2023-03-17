@@ -30,7 +30,7 @@ class Cards {
         timelineMainCard.resume();
         lastSecondCard.src = `assets/img/cards/${randomNum}_card_${color}.png`;
         lastSecondCard.setAttribute('name', JSON.stringify({color, symbol: randomNum}));
-        
+        lastSecondCard.setAttribute('title', lastSecondCard.getAttribute('name'));
     }
 
     static removeAllCards() {

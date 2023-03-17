@@ -17,6 +17,7 @@ class Game {
             const img = document.createElement('img');
             img.src = `assets/img/cards/uno.png`;
             img.setAttribute('name', JSON.stringify({color: 'black', symbol: 'uno'})),
+            img.setAttribute('title', img.getAttribute('name'));
             appCards.appendChild(img);
             i++;
         }
@@ -31,6 +32,7 @@ class Game {
             img.src = `assets/img/cards/${i}_card_${color}.png`;
             img.setAttribute('name', JSON.stringify({color: color, symbol: i})),
             appCards.appendChild(img);
+            img.setAttribute('title', img.getAttribute('name'));
             i++;
         }
     }
