@@ -42,7 +42,14 @@ class Game {
         });
     }
 
+    clearAll() {
+        const imgs = document.querySelectorAll('.cards img');
+        imgs.forEach(img => {
+            img.remove();
+        })
+
+    }
+
 }
 
 const game = new Game();
-game.preventHoldingImgs();
