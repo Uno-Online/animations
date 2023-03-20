@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/basic.css">
+    <script src="./assets/js/gsap.js" defer></script>
+    <script src="./assets/js/animations.js" defer></script>
+    <title>Site animation</title>
+</head>
+<body>
+
+    <div id="app">
+        <a href="index.html" class="logo-link">
+            <div class="logo"></div>
+        </a>
+        <div class="container">
+            <div class="bg-blue">
+                <div class="tabs">
+                    <div class="guide" data-content="1">Entrar</div>
+                    <div class="guide active" data-content="2">Convidado</div>
+                </div>
+                <div class="guide-content" data-guide="1">
+                    <img src="./assets/img/forms/form-1.png" />
+                    <img src="./assets/img/forms/footer-1.png" style="margin-top:1rem;" />
+                </div>
+                <div class="guide-content" data-guide="2" style="display: none;">
+                    <img src="./assets/img/forms/form-2.png" />
+                    <img src="./assets/img/forms/footer-2.png" style="margin-top:1rem;" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,90 @@
+body {
+    font-family: sans-serif;
+    background: url('../img/bg01.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+#app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a.logo-link {
+    display: inline-block;
+}
+
+.logo {
+    background: url('../img/logo.png') no-repeat left center;
+    background-size: contain;
+    height: 420px;
+    width: 369px;
+    display: block;
+}
+
+.container {
+    transition: opacity .3s;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    background: #fff;
+    box-shadow: 1px 1px 14px rgb(0 0 0 / 52%);
+    width: 450px;
+    height: 500px;
+    padding: 1rem;
+    margin-bottom: 80px;
+}
+
+.container .bg-blue {
+    background-color: #0096DC;
+    height: inherit;
+    color:#fff;
+}
+
+.tabs {
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.tabs .guide {
+    cursor: pointer;
+    color: #fff;
+    flex-basis: 50%;
+    text-align: center;
+    padding: 1rem;
+    transition: background .2s, color .2s;
+}
+
+.tabs .guide:hover, .tabs .guide.active {
+    color: #0096DC;
+    background: #fff;
+}
+
+.guide-content {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.col-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 2rem;
+    margin-top:1.6rem;
+}
+
+.col-form label {
+    user-select: none;
+    cursor: pointer;
+}
+
+.col-form input {
+    margin: 5px 0;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    padding: 8px 1rem;
+}
