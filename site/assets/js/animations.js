@@ -6,7 +6,9 @@ const timeline2 = gsap.timeline({paused: true});
     timeline2.to('.logo', {duration: .5, ease: 'back', y: '0%'})
     timeline2.to('.container .bg-blue', {duration: .8, ease:'circ', borderRadius: '5px'})
     timeline2.to('.container', {duration: 2, ease:'circ', borderRadius: '5px', })
-
+const timeline3 = gsap.timeline({paused: true});
+    timeline3.fromTo('.container', {duration: .3, zoom: .5, }, {duration: .3, ease:'back', zoom: 1, })
+    
 function showContent() {
     const container = document.querySelector('.container');
     timeline2.resume();
@@ -14,6 +16,7 @@ function showContent() {
     setTimeout(() => {
         container.style.opacity = '1';
         container.style.pointerEvents = 'all';
+        timeline3.resume();
     }, 200);
 }
 
@@ -36,3 +39,7 @@ function guides() {
     // console.log(guidesContent)
     // console.log(guidesTabs)
 }guides();
+
+function startGame() {
+    window.location.reload();
+}
