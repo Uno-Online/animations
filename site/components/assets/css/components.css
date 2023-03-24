@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css');
 
 * {
     font-family: 'Cabin', sans-serif;
@@ -30,6 +31,7 @@ p {
 label {
     user-select: none;
     cursor: pointer;
+    margin: 10px;
 }
 
 input[type="checkbox"] {
@@ -44,6 +46,15 @@ input[type="checkbox"] {
     height: 18px;
     position: relative;
     top: 3px;
+}
+
+input[type="checkbox"]:hover::after {
+    content: '';
+    background-color: #0096dc3a;
+    display: block;
+    clip-path: polygon(28% 38%, 41% 53%, 75% 24%, 86% 38%, 40% 78%, 15% 50%);
+    width: 18px;
+    height: 18px;
 }
 
 input[type="checkbox"]:checked::before {
@@ -84,6 +95,8 @@ input[type="checkbox"]:checked {
     background: #fff;
 }
 
+
+
 input[type="button"], button, button.force-hover {
     background-color: #ED1C24;
     box-shadow: -6px 6px 0px #000;
@@ -106,4 +119,154 @@ input[type="button"]:hover, button:hover, button.force-hover {
 input[type="button"]:disabled, button:disabled {
     background-color: #7C7C7A;
     cursor: not-allowed;
+}
+
+.card {
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    color: #000;
+    width: 178px;
+    height: 112px;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius:5px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: box-shadow .3s ease-out, border-color .3s ease-out;
+}
+
+.card.disabled {
+    background-color: rgb(156, 155, 155);
+    cursor: not-allowed;
+}
+
+.card:not(.disabled):hover, .card.force-hover {
+    box-shadow: inset 0px 0px 4px #1c1c1c;
+    border: 3px solid red;
+}
+
+.card .user {
+    color: #cccccc;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.card .users-count i {
+    color: #F8DA27;
+    margin-right: 3px;
+    font-family: 18px;
+}
+
+.card.disabled .users-count {
+    color:#c52025;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    outline: none;
+    border: none;
+    box-shadow: -6px 6px 0px #000;
+    font-size: 20px;
+    font-family: 'Cabin', sans-serif;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+input[type="text"]:disabled, input[type="email"]:disabled, input[type="password"]:disabled {
+    background-color: #7C7C7A;
+    cursor: not-allowed;
+}
+
+input[type="text"]:disabled::placeholder, input[type="email"]:disabled::placeholder, input[type="password"]:disabled::placeholder {
+    color:rgb(80, 80, 80);
+}
+
+.icon-input {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #fff;
+    color: #000;
+    width: fit-content;
+    border-radius: 5px;
+    box-shadow: -6px 6px 0px #000;
+}
+
+.icon-input label {
+    margin: 0;
+    align-self: center;
+}
+
+.icon-input i {
+    padding: .6rem;
+    color: #7e7e7e;
+}
+
+.icon-input input {
+    box-shadow: none;
+}
+
+input[type="radio"] {
+    outline: none;
+    cursor: pointer;
+    background: #fff;
+    clip-path: circle();
+    box-shadow: -2px 4px 1px #000;
+    appearance: unset;
+    border: none;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    top: 3px;
+}
+
+input[type="radio"]:hover::after {
+    content: '';
+    background-color: #0096dc3a;
+    display: block;
+    clip-path: polygon(28% 38%, 41% 53%, 75% 24%, 86% 38%, 40% 78%, 15% 50%);
+    width: 18px;
+    height: 18px;
+}
+
+input[type="radio"]:checked::before {
+    content: '';
+    background-color: #0096DC;
+    display: block;
+    clip-path: polygon(28% 38%, 41% 53%, 75% 24%, 86% 38%, 40% 78%, 15% 50%);
+    width: 18px;
+    height: 18px;
+}
+
+input[type="radio"]:disabled {
+    cursor: not-allowed;
+    background-color: rgb(207, 207, 207);
+    position: relative;
+}
+
+input[type="radio"]:disabled::before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    display: block;
+    zoom: .8;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    background-color: rgb(121, 121, 121);
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+input[type="radio"]:checked::before:hover {
+    background-color: green;
+}
+
+input[type="radio"]:checked {
+    background: #fff;
 }
