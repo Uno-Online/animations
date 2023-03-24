@@ -4,9 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/components.css" type="text/css">
     <title>Uno Components</title>
 </head>
 <body>
-    
+    <div id="app">
+        <a href="assets/css/components.css">components.css</a>
+        <br>
+        <div class="fonts">
+            <div class="titles">
+                <h1>Text Large</h1>
+                <h2>Text Medium</h2>
+                <p>Text small</p>
+            </div>
+            <div class="font">
+                <p>Cabin</p>
+                <p style="font-weight: 600;">Cabin SemiBold</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    
+    #app {
+        width: 50%;
+        margin: 0 auto;
+        color: #fff;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding: 5rem;
+        align-items: flex-start;        
+        background-color: #454444;
+    }
+
+    .fonts {
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
+    }
+</style>
