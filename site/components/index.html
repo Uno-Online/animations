@@ -13,15 +13,32 @@
         <br>
         <div class="fonts">
             <div class="titles">
-                <h1>Text Large</h1>
-                <h2>Text Medium</h2>
-                <p>Text small</p>
+                <h1>H1</h1>
+                <h2>H2</h2>
+                <p>text</p>
             </div>
             <div class="font">
                 <p>Cabin</p>
-                <p style="font-weight: 600;">Cabin SemiBold</p>
+                <p style="font-weight: 600;">Cabin SemiBold (font-weight: 600)</p>
             </div>
         </div>
+        
+        <div class="form space">
+            <div class="checkbox">
+                <label for="chk-1">Default</label>
+                <input type="checkbox" id="chk-1">
+                checkbox
+
+                <br>
+                <label for="chk-2">Checked</label>
+                <input type="checkbox" id="chk-2" checked>
+
+                <br>
+                <label for="chk-2">Disabled</label>
+                <input type="checkbox" id="chk-2" disabled>
+            </div>
+        </div>
+        
     </div>
 </body>
 </html>
@@ -49,5 +66,9 @@
         display: flex;
         flex-direction: row;
         gap: 5rem;
+    }
+
+    .space {
+        margin: 5rem 0; 
     }
 </style>
