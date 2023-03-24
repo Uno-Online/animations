@@ -1,9 +1,10 @@
 const timeline1 = gsap.timeline();
-    timeline1.to('.logo', {duration: 0, y: '-100%'})
-    timeline1.to('.logo', {duration: .8, y: '50%', ease: 'back'})
-    timeline1.to('.logo', {duration: 1, ease: 'circ', onComplete: () => showContent()})
+    timeline1.to('.logo-link', {duration: 0, y: '-100%'})
+    timeline1.to('.logo-link', {duration: .8, y: '50%', ease: 'back'})
+    timeline1.to('.logo-link', {duration: 1, ease: 'circ', onComplete: () => showContent()})
+    timeline1.fromTo('body', {delay: 3, duration: 5, ease: 'circ', backgroundPosition: '0 0'}, {duration: 5, ease:'power3', backgroundPosition: '0 -200px'})
 const timeline2 = gsap.timeline({paused: true});
-    timeline2.to('.logo', {duration: .5, ease: 'back', y: '0%'})
+    timeline2.to('.logo-link', {duration: .5, ease: 'back', y: '0%'})
     timeline2.to('.container .bg-blue', {duration: .8, ease:'circ', borderRadius: '5px'})
     timeline2.to('.container', {duration: 2, ease:'circ', borderRadius: '5px', })
 const timeline3 = gsap.timeline({paused: true});
