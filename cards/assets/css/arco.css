@@ -1,0 +1,17 @@
+#app {
+  display: flex;
+  margin-top: 5rem;
+  justify-content: center;
+}
+#app .cards.cards-curved {
+  position: relative;
+}
+#app .cards.cards-curved .card {
+  position: absolute;
+  transform-origin: bottom center;
+  transition: transform 0.4s ease-in, filter 0.3s ease-in-out;
+  cursor: pointer;
+}
+#app .cards.cards-curved .card:hover {
+  z-index: 1;
+}/*# sourceMappingURL=arco.css.map */

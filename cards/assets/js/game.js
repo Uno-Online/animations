@@ -1,10 +1,5 @@
 const appCards = document.querySelector('#app .cards');
 
-const reloadBtn = document.createElement('button');
-reloadBtn.name = 'reload';
-reloadBtn.innerText = 'Restart animation';
-document.body.appendChild(reloadBtn);
-
 class Game {
     colors = ["yellow", "blue", "red", "green"];
     
@@ -21,6 +16,36 @@ class Game {
             appCards.appendChild(img);
             i++;
         }
+    }
+
+    generateCardsNum(value) {
+        let cards = [];
+        let i = 1;
+        while(i <= value) {
+            const img = document.createElement('img');
+            img.src = `assets/img/cards/uno.png`;
+            img.setAttribute('name', JSON.stringify({color: 'black', symbol: 'uno'})),
+            img.setAttribute('title', img.getAttribute('name'));
+            cards.push(img);
+            i++;
+        }
+        return cards;
+    }
+
+    generateRandomCardsNum(value) {
+        let cards = [];
+        let i = 1;
+        while(i <= value) {
+            const img = document.createElement('img');
+            let randomNum = Math.floor(Math.random() * this.colors.length - 1) + 1;
+            const color = this.colors[randomNum];
+            img.src = `assets/img/cards/${i}_card_${color}.png`;
+            img.setAttribute('name', JSON.stringify({color: color, symbol: i})),
+            img.setAttribute('title', img.getAttribute('name'));
+            cards.push(img);
+            i++;
+        }
+        return cards;
     }
 
     generateRandomCards(value) {

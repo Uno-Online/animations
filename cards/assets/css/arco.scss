@@ -1,0 +1,22 @@
+#app {
+    display: flex;
+    margin-top: 5rem;
+    justify-content: center;
+
+    .cards.cards-curved {
+        position: relative;
+
+        .card {
+            // position: relative;
+            position: absolute;
+            transform-origin: bottom center;
+            transition: transform .4s ease-in, filter .3s ease-in-out;
+            cursor: pointer;
+            
+            &:hover {
+                z-index:1;
+            }
+        }
+    }
+
+}
