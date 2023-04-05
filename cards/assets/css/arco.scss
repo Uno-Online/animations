@@ -21,7 +21,7 @@
             transition: transform .4s ease-in, filter .3s ease-in-out;
             cursor: pointer;
             
-            &:hover {
+            &.select:hover {
                 z-index:1!important;
             }
         }

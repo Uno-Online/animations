@@ -19,6 +19,6 @@
   transition: transform 0.4s ease-in, filter 0.3s ease-in-out;
   cursor: pointer;
 }
-#app .cards.cards-curved .card:hover {
+#app .cards.cards-curved .card.select:hover {
   z-index: 1 !important;
 }/*# sourceMappingURL=arco.css.map */
