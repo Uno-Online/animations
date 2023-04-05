@@ -4,7 +4,14 @@
   justify-content: center;
 }
 #app .cards.cards-curved {
+  contain: initial;
   position: relative;
+  width: 610px;
+  height: 220px;
+  outline: 1px solid red;
+}
+#app .cards.cards-curved .deck {
+  transform: translateX(15%);
 }
 #app .cards.cards-curved .card {
   position: absolute;
@@ -13,5 +20,5 @@
   cursor: pointer;
 }
 #app .cards.cards-curved .card:hover {
-  z-index: 1;
+  z-index: 1 !important;
 }/*# sourceMappingURL=arco.css.map */

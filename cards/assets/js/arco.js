@@ -1,8 +1,7 @@
 class Arco {
 
     constructor(genCards, delay = 0) {
-        console.log(genCards)
-        let cards = document.querySelector('.cards.cards-curved');
+        let cards = document.querySelector('.cards.cards-curved .deck');
         let w = cards.offsetWidth;
         let totalarc = 270;
         let numcards = genCards.length;
@@ -15,11 +14,15 @@ class Arco {
             cards.appendChild(card);
             const cardReveal = JSON.parse(JSON.stringify(card.src));
             card.src = 'assets/img/cards/uno.png'
-                setTimeout(() => {
+            setTimeout(() => {
                     card.style = `transform:rotate(${angles[i] / 3}deg); filter: brightness(0%);`
+                    card.style.setProperty('left', `${50*i}px`);
                 }, delay)
                 setTimeout(() => {
                     card.style.setProperty('filter', 'brightness(100%)');
+                    if(i == 0) {
+                        card.style.setProperty('z-index', '0');
+                    }
                     card.src = cardReveal;
                 }, delay + 500)
             })
