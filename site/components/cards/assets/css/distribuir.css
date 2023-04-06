@@ -1,13 +1,61 @@
-body {
-  background-color: blue;
-  background: radial-gradient(50% 50% at 50% 50%, #65C0E3 0%, #3E6BD9 100%);
-}
-
 #app {
   display: flex;
-  margin-top: 5rem;
-  justify-content: center;
-  height: 80vh;
+  height: 100vh;
+  gap: 5rem;
+  margin-top: 5px;
+  justify-content: space-between;
+  flex-direction: column;
+}
+#app .controls-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#app .controls-bottom img.uno {
+  position: absolute;
+  right: 10rem;
+  bottom: 2rem;
+}
+#app .controls-bottom img.mount {
+  position: absolute;
+  left: 10rem;
+  bottom: 2rem;
+}
+#app .user-cards {
+  position: relative;
+}
+#app .user-cards img {
+  position: relative;
+  margin: 0 -30px;
+}
+#app .user-cards.side {
+  top: 3rem;
+}
+#app .user-cards.side img {
+  margin: 0 -40px;
+}
+#app .user-cards.side.one {
+  rotate: 102deg;
+  align-self: baseline;
+}
+#app .user-cards.side.two {
+  rotate: -102deg;
+  align-self: baseline;
+}
+#app .top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#app .inline {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around;
+}
+#app .middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 #app .cards.cards-curved {
   contain: initial;
@@ -15,7 +63,6 @@ body {
   width: 610px;
   height: 220px;
   align-self: end;
-  border: 2px solid red;
   transition: opacity 0.5s ease-out, filter 0.4s ease-out;
   opacity: 0.8;
   filter: brightness(80%);
@@ -23,6 +70,9 @@ body {
 #app .cards.cards-curved:hover {
   opacity: 1;
   filter: brightness(100%);
+}
+#app .cards.cards-curved .deck {
+  position: relative;
 }
 #app .cards.cards-curved .card {
   position: absolute;

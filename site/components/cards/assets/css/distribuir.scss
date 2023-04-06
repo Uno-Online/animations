@@ -1,13 +1,76 @@
-body {
-    background-color: blue;
-    background: radial-gradient(50% 50% at 50% 50%, #65C0E3 0%, #3E6BD9 100%);
-}
-
 #app {
     display: flex;
-    margin-top: 5rem;
-    justify-content: center;
-    height: 80vh;
+    height: 100vh;
+    gap: 5rem;
+    margin-top: 5px;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .controls-bottom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        img {
+            &.uno {
+                position: absolute;
+                right: 10rem;
+                bottom: 2rem;
+            }
+
+            &.mount {
+                position: absolute;
+                left: 10rem; 
+                bottom: 2rem;
+            }
+        }
+    }
+
+    .user-cards {
+        position: relative;
+
+        img {
+            position: relative;
+            margin: 0 -30px;
+        }
+
+        &.side {
+            top: 3rem;
+            img {
+                margin: 0 -40px;
+            }
+            
+            &.one {
+                rotate: 102deg;
+                align-self: baseline;
+            }
+    
+            &.two {
+                rotate: -102deg;
+                align-self: baseline;
+            }
+        }
+        
+    }
+    
+    .top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .inline {
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-around;
+    }
+
+    .middle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .main {}
+    }
 
     .cards.cards-curved {
         contain: initial;
@@ -15,7 +78,7 @@ body {
         width: 610px;
         height: 220px;
         align-self: end;
-        border: 2px solid red;
+        // border: 2px solid red;
         transition: opacity .5s ease-out, filter .4s ease-out;
         opacity: .8;
         filter: brightness(80%);
@@ -24,6 +87,10 @@ body {
             opacity: 1;
             filter: brightness(100%);
 
+        }
+
+        .deck {
+            position: relative;
         }
 
         .card {
