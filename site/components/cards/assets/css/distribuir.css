@@ -110,11 +110,14 @@
   position: absolute;
   z-index: auto;
   cursor: pointer;
-  transform: rotate(calc(8.3333333333deg * var(--i)));
-  transform-origin: bottom bottom;
-  rotate: -35deg;
+  transition: top 0.2s ease-out, filter 0.2s ease-out, transform 0.2s ease-in 1s, rotate 0.2s ease-in 1s, left 1s ease-in;
+  left: 0;
+}
+#app .cards.cards-curved .card.spread {
   left: calc(38px * var(--i));
-  transition: top 0.2s ease-out, filter 0.2s ease-out;
+  transform: rotate(calc(8.3333333333deg * var(--i)));
+  rotate: -35deg;
+  transform-origin: bottom bottom;
 }
 #app .cards.cards-curved .card.uno {
   filter: brightness(0%);

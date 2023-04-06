@@ -21,6 +21,7 @@
             card.classList.remove('uno');
             card.classList.add('select');
             card.setAttribute('name', originalCards[i].name)
+            card.classList.add('spread');
             console.log(card.src)
         }, 1000)
     });
@@ -33,6 +34,13 @@
                 : randomNumber == 2 ? 'radial-gradient(50% 50% at 50% 50%, #F97E84 23.44%, #ED1A24 100%)'  
                 : 'radial-gradient(50% 50% at 50% 50%, #65C0E3 0%, #3E6BD9 100%)';
     document.body.style.setProperty('background', bg);
+
+    // no drag images
+    document.querySelectorAll('img').forEach(img => {
+        console.log(img)
+        img.draggable = false;
+    });
+    
 })();
 
 class Distribuir {

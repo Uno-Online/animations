@@ -158,12 +158,16 @@
             position: absolute;
             z-index: auto;
             cursor: pointer;
-            transform: rotate(calc($arc * var(--i)));
             // transform-origin: center bottom;
-            transform-origin: bottom bottom;
-            rotate: -35deg;
-            left: calc(38px * var(--i));
-            transition: top 0.2s ease-out, filter 0.2s ease-out;
+            transition: top 0.2s ease-out, filter 0.2s ease-out, transform .2s ease-in 1s, rotate .2s ease-in 1s, left 1s ease-in;
+            left: 0;
+            
+            &.spread {
+                left: calc(38px * var(--i));
+                transform: rotate(calc($arc * var(--i)));
+                rotate: -35deg;
+                transform-origin: bottom bottom;
+            }
 
             &.uno {
                 filter: brightness(0%);
