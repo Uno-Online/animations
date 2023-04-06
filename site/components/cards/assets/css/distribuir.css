@@ -78,9 +78,9 @@
   width: 610px;
   height: 220px;
   align-self: end;
-  border: 2px solid red;
-  transition: opacity 0.5s ease-out, filter 0.4s ease-out;
-  opacity: 0.8;
+  border: 2px solid rgba(255, 0, 0, 0.11);
+  transition: opacity 0.8s ease-in-out, filter 0.4s ease-out;
+  opacity: 0.9;
   filter: brightness(80%);
 }
 #app .cards.cards-curved:hover {
@@ -97,10 +97,13 @@
   z-index: auto;
   cursor: pointer;
   transform: rotate(calc(8.3333333333deg * var(--i)));
-  transform-origin: center bottom;
+  transform-origin: bottom bottom;
   rotate: -35deg;
   left: calc(38px * var(--i));
-  transition: top 0.2s;
+  transition: top 0.2s ease-out, filter 0.2s ease-out;
+}
+#app .cards.cards-curved .card.uno {
+  filter: brightness(0%);
 }
 #app .cards.cards-curved .card.select:hover {
   top: -2rem;
