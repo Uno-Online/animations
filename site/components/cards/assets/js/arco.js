@@ -21,7 +21,7 @@ class Arco {
                 card.style.setProperty('left', `${50 * i}px`);
             }, delay);
             setTimeout(() => {
-                card.style.setProperty('filter', 'brightness(100%)');
+                card.style.setProperty('filter', 'brightness(100%) drop-shadow(2px 4px 6px #000000ab)');
                 if (i == 0) {
                     card.style.setProperty('z-index', '0');
                 }
@@ -31,4 +31,3 @@ class Arco {
         });
     }
 }
-new Arco(game.generateRandomCardsNum(7), 1000);

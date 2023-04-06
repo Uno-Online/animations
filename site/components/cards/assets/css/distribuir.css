@@ -1,0 +1,38 @@
+body {
+  background-color: blue;
+  background: radial-gradient(50% 50% at 50% 50%, #65C0E3 0%, #3E6BD9 100%);
+}
+
+#app {
+  display: flex;
+  margin-top: 5rem;
+  justify-content: center;
+  height: 80vh;
+}
+#app .cards.cards-curved {
+  contain: initial;
+  position: relative;
+  width: 610px;
+  height: 220px;
+  align-self: end;
+  border: 2px solid red;
+  transition: opacity 0.5s ease-out;
+  opacity: 0.5;
+}
+#app .cards.cards-curved:hover {
+  opacity: 1;
+}
+#app .cards.cards-curved .deck {
+  transform: translateX(15%);
+}
+#app .cards.cards-curved .card {
+  position: absolute;
+  transform-origin: bottom center;
+  transition: transform 0.4s ease-in, filter 0.3s ease-in-out, top 0.3s ease-out;
+  cursor: pointer;
+  top: 0;
+}
+#app .cards.cards-curved .card.select:hover {
+  z-index: 1 !important;
+  top: -1rem;
+}/*# sourceMappingURL=distribuir.css.map */

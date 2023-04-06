@@ -1,0 +1,45 @@
+body {
+    background-color: blue;
+    background: radial-gradient(50% 50% at 50% 50%, #65C0E3 0%, #3E6BD9 100%);
+}
+
+#app {
+    display: flex;
+    margin-top: 5rem;
+    justify-content: center;
+    height: 80vh;
+
+    .cards.cards-curved {
+        contain: initial;
+        position: relative;
+        width: 610px;
+        height: 220px;
+        align-self: end;
+        border: 2px solid red;
+        transition: opacity .5s ease-out;
+        opacity: .5;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        .deck {
+            transform: translateX(15%);
+        }
+
+        .card {
+            // position: relative;
+            position: absolute;
+            transform-origin: bottom center;
+            transition: transform .4s ease-in, filter .3s ease-in-out, top .3s ease-out;
+            cursor: pointer;
+            top: 0;
+            
+            &.select:hover {
+                z-index:1!important;
+                top: -1rem;
+            }
+        }
+    }
+
+}
