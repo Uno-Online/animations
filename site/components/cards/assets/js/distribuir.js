@@ -4,12 +4,15 @@
     const userBoard = document.querySelector('.cards.cards-curved .deck');
     const cards = game.generateCardsNum(7)
     const originalCards = game.generateRandomCardsNum(7);
+
     cards.forEach((card, i) => {
         card.style.setProperty('--i', (i+1));
         card.style.setProperty('--numCards', cards.length);
         card.classList.add('card');
+
         userBoard.appendChild(card);
         
+        card.addEventListener('click', teste);
         
         //fx
         setTimeout(() => {
@@ -22,10 +25,8 @@
             card.classList.add('select');
             card.setAttribute('name', originalCards[i].name)
             card.classList.add('spread');
-            console.log(card.src)
         }, 1000)
     });
-    
 
     // generate bg
     let randomNumber = Math.floor(Math.random() * 5);
@@ -37,11 +38,14 @@
 
     // no drag images
     document.querySelectorAll('img').forEach(img => {
-        console.log(img)
         img.draggable = false;
     });
     
 })();
+
+function teste() {
+    this.classList.add('teste');
+}
 
 class Distribuir {
 
