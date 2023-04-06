@@ -1,8 +1,13 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 #app {
     display: flex;
     height: 100vh;
     gap: 5rem;
-    margin-top: 5px;
     justify-content: space-between;
     flex-direction: column;
 
@@ -81,7 +86,18 @@
         justify-content: space-between;
 
         .main {
+            display: flex;
+            // position: relative;
             align-self: center;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            width: -webkit-fill-available;
+            .middle-card {
+                position: relative;
+                top: -1rem;
+                z-index: -2;
+            }
         }
     }
 
@@ -93,9 +109,9 @@
         width: 610px;
         height: 220px;
         align-self: end;
-        border: 2px solid rgba(255, 0, 0, 0.11);
-        transition: opacity .8s ease-in-out, filter 0.4s ease-out;
-        opacity: .9;
+        // border: 2px dashed rgba(255, 0, 0, 0.11);
+        transition: opacity 0.8s ease-in-out, filter 0.4s ease-out;
+        opacity: 0.9;
         filter: brightness(80%);
 
         &:hover {
@@ -114,12 +130,12 @@
             // &.select:hover {
             //     top: -2rem;
             // }
-            
+
             // @function calc-angle($numcards, $i) {
             //     $angle: (279 / $numcards) * ($i + 1) - (279 / 2 + 279 / $numcards / 2);
             //     @return $angle;
             // }
-            
+
             // $numcards: calc(1 * var(--numCards));
             // $i: calc(1 * var(--i));
             // $angles: ();
@@ -147,7 +163,7 @@
             transform-origin: bottom bottom;
             rotate: -35deg;
             left: calc(38px * var(--i));
-            transition: top .2s ease-out, filter .2s ease-out;
+            transition: top 0.2s ease-out, filter 0.2s ease-out;
 
             &.uno {
                 filter: brightness(0%);
@@ -157,6 +173,29 @@
                 top: -2rem;
             }
         }
-        
     }
+
+    @keyframes rotate {
+        from {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+        to {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+}
+
+.arrows {
+    position: absolute;
+    z-index: -1;
+    background: url(../img/arrows.png) no-repeat;
+    filter: drop-shadow(2px -6px 0px black);
+    animation: rotate 20s linear infinite;
+    opacity: .8;
+    height: 400px;
+    width: 400px;
+    background-size: 100% 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

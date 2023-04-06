@@ -7,12 +7,15 @@
     cards.forEach((card, i) => {
         card.style.setProperty('--i', (i+1));
         card.style.setProperty('--numCards', cards.length);
-        card.classList.add('uno');
         card.classList.add('card');
         userBoard.appendChild(card);
         
         
         //fx
+        setTimeout(() => {
+            card.classList.add('uno');
+        }, 500)
+        
         setTimeout(() => {
             card.src = originalCards[i].src;
             card.classList.remove('uno');
