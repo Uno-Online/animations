@@ -17,7 +17,8 @@ class Arco {
             card.src = 'assets/img/cards/uno.png';
             card.style.setProperty('left', `${50 * i}px`);
             setTimeout(() => {
-                card.style = `transform:rotate(${angles[i] / 3}deg); filter: brightness(0%);`;
+                const rotationAngle = (numcards > 7) ? angles[i] / 20 : angles[i] / 10;
+                card.style = `transform:rotate(${rotationAngle}deg); filter: brightness(0%);`;
                 card.style.setProperty('left', `${50 * i}px`);
             }, delay);
             setTimeout(() => {
@@ -28,6 +29,9 @@ class Arco {
                 card.src = cardReveal;
                 card.classList.add('select');
             }, delay + 500);
+
+            // positioning deck
+            cards.style.setProperty('transform', `translateX(${(numcards <= 6) ? 30 : 15}%)`);
         });
     }
 }

@@ -16,28 +16,28 @@ body {
         height: 220px;
         align-self: end;
         border: 2px solid red;
-        transition: opacity .5s ease-out;
-        opacity: .5;
+        transition: opacity .5s ease-out, filter .4s ease-out;
+        opacity: .8;
+        filter: brightness(80%);
 
         &:hover {
             opacity: 1;
-        }
+            filter: brightness(100%);
 
-        .deck {
-            transform: translateX(15%);
         }
 
         .card {
             // position: relative;
             position: absolute;
             transform-origin: bottom center;
-            transition: transform .4s ease-in, filter .3s ease-in-out, top .3s ease-out;
+            transition: transform .4s ease-in, filter .3s ease-in-out, top .3s ease-out, z-index .3s ease-out;
             cursor: pointer;
             top: 0;
+            z-index: auto;
             
             &.select:hover {
-                z-index:1!important;
-                top: -1rem;
+                // z-index:1!important;
+                top: -2rem;
             }
         }
     }

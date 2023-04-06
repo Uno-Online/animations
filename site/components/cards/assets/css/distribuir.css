@@ -16,23 +16,22 @@ body {
   height: 220px;
   align-self: end;
   border: 2px solid red;
-  transition: opacity 0.5s ease-out;
-  opacity: 0.5;
+  transition: opacity 0.5s ease-out, filter 0.4s ease-out;
+  opacity: 0.8;
+  filter: brightness(80%);
 }
 #app .cards.cards-curved:hover {
   opacity: 1;
-}
-#app .cards.cards-curved .deck {
-  transform: translateX(15%);
+  filter: brightness(100%);
 }
 #app .cards.cards-curved .card {
   position: absolute;
   transform-origin: bottom center;
-  transition: transform 0.4s ease-in, filter 0.3s ease-in-out, top 0.3s ease-out;
+  transition: transform 0.4s ease-in, filter 0.3s ease-in-out, top 0.3s ease-out, z-index 0.3s ease-out;
   cursor: pointer;
   top: 0;
+  z-index: auto;
 }
 #app .cards.cards-curved .card.select:hover {
-  z-index: 1 !important;
-  top: -1rem;
+  top: -2rem;
 }/*# sourceMappingURL=distribuir.css.map */
