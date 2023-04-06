@@ -13,12 +13,12 @@
         
         //fx
         setTimeout(() => {
-            card.classList.add('uno');
+            card.classList.add('uno-card');
         }, 500)
         
         setTimeout(() => {
             card.src = originalCards[i].src;
-            card.classList.remove('uno');
+            // card.classList.remove('uno-card');
             card.classList.add('select');
             card.setAttribute('name', originalCards[i].name)
             card.classList.add('spread');

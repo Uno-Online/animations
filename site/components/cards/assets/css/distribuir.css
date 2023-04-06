@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
 #app {
   display: flex;
   height: 100vh;
@@ -93,7 +99,7 @@
   width: 610px;
   height: 220px;
   align-self: end;
-  transition: opacity 0.8s ease-in-out, filter 0.4s ease-out;
+  transition: opacity 0.4s ease-in-out, filter 0.2s ease-out;
   opacity: 0.9;
   filter: brightness(80%);
 }
@@ -110,7 +116,7 @@
   position: absolute;
   z-index: auto;
   cursor: pointer;
-  transition: top 0.2s ease-out, filter 0.2s ease-out, transform 0.2s ease-in 1s, rotate 0.2s ease-in 1s, left 1s ease-in;
+  transition: top 0.2s ease-out, filter 0.2s ease-out 0.07s, transform 0.2s ease-in 0.5s, rotate 0.2s ease-in 0.5s, left 0.5s ease-in;
   left: 0;
 }
 #app .cards.cards-curved .card.spread {
@@ -118,9 +124,6 @@
   transform: rotate(calc(8.3333333333deg * var(--i)));
   rotate: -35deg;
   transform-origin: bottom bottom;
-}
-#app .cards.cards-curved .card.uno {
-  filter: brightness(0%);
 }
 #app .cards.cards-curved .card.select:hover {
   top: -2rem;

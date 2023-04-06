@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+img {
+    user-select: none;
+}
 
 #app {
     display: flex;
@@ -110,7 +113,7 @@
         height: 220px;
         align-self: end;
         // border: 2px dashed rgba(255, 0, 0, 0.11);
-        transition: opacity 0.8s ease-in-out, filter 0.4s ease-out;
+        transition: opacity 0.4s ease-in-out, filter 0.2s ease-out;
         opacity: 0.9;
         filter: brightness(80%);
 
@@ -159,7 +162,7 @@
             z-index: auto;
             cursor: pointer;
             // transform-origin: center bottom;
-            transition: top 0.2s ease-out, filter 0.2s ease-out, transform .2s ease-in 1s, rotate .2s ease-in 1s, left 1s ease-in;
+            transition: top 0.2s ease-out, filter 0.2s ease-out .07s, transform .2s ease-in .5s, rotate .2s ease-in .5s, left .5s ease-in;
             left: 0;
             
             &.spread {
@@ -169,8 +172,8 @@
                 transform-origin: bottom bottom;
             }
 
-            &.uno {
-                filter: brightness(0%);
+            &.uno-card {
+                // filter: brightness(0%);
             }
 
             &.select:hover {
