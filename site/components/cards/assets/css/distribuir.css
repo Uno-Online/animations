@@ -15,11 +15,20 @@
   position: absolute;
   right: 10rem;
   bottom: 2rem;
+  filter: drop-shadow(2px 4px 6px black);
+  filter: grayscale(1);
+}
+#app .controls-bottom img.uno:hover {
+  filter: brightness(130%);
+  filter: drop-shadow(2px 4px 6px black);
+  filter: grayscale(1);
 }
 #app .controls-bottom img.mount {
   position: absolute;
   left: 10rem;
   bottom: 2rem;
+  filter: grayscale(1);
+  opacity: 0.8;
 }
 #app .user-cards {
   position: relative;
@@ -27,6 +36,7 @@
 #app .user-cards img {
   position: relative;
   margin: 0 -30px;
+  filter: brightness(80%);
 }
 #app .user-cards.side {
   top: 3rem;
@@ -56,6 +66,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+#app .middle .main {
+  align-self: center;
 }
 #app .cards.cards-curved {
   contain: initial;

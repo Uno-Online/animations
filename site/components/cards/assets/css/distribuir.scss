@@ -16,12 +16,22 @@
                 position: absolute;
                 right: 10rem;
                 bottom: 2rem;
+                filter: drop-shadow(2px 4px 6px black);
+                filter: grayscale(1);
+
+                &:hover {
+                    filter: brightness(130%);
+                    filter: drop-shadow(2px 4px 6px black);
+                    filter: grayscale(1);
+                }
             }
 
             &.mount {
                 position: absolute;
                 left: 10rem; 
                 bottom: 2rem;
+                filter: grayscale(1);
+                opacity: .8;
             }
         }
     }
@@ -32,6 +42,7 @@
         img {
             position: relative;
             margin: 0 -30px;
+            filter: brightness(80%);
         }
 
         &.side {
@@ -69,7 +80,11 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        .main {}
+
+        
+        .main {
+            align-self: center;
+        }
     }
 
     .cards.cards-curved {
