@@ -1,7 +1,18 @@
-new Arco(game.generateRandomCardsNum(7), 1000);
-
-// generate random bg
+// generate game
 (() => {
+    // generate game cards
+    const userBoard = document.querySelector('.cards.cards-curved .deck');
+    const cards = game.generateCardsNum(7)
+    const originalCards = game.generateRandomCardsNum(7);
+    cards.forEach((card, i) => {
+        card.style.setProperty('--i', (i+1));
+        card.style.setProperty('--numCards', cards.length);
+        card.classList.add('card');
+        card.classList.add('select');
+        userBoard.innerHTML += card.outerHTML;
+    });
+
+    // generate bg
     let randomNumber = Math.floor(Math.random() * 5);
     let bg = randomNumber == 0 ? 'radial-gradient(50% 50% at 50% 50%, #FFF5B1 21.87%, #E3BF00 100%'
                 : randomNumber == 1 ? 'radial-gradient(50% 50% at 50% 50%, #43F555 0%, #01A54E 100%)' 

@@ -71,11 +71,14 @@
   align-self: center;
 }
 #app .cards.cards-curved {
+  display: flex;
+  justify-content: center;
   contain: initial;
   position: relative;
   width: 610px;
   height: 220px;
   align-self: end;
+  border: 2px solid red;
   transition: opacity 0.5s ease-out, filter 0.4s ease-out;
   opacity: 0.8;
   filter: brightness(80%);
@@ -85,15 +88,19 @@
   filter: brightness(100%);
 }
 #app .cards.cards-curved .deck {
-  position: relative;
+  position: absolute;
+  left: 15%;
 }
 #app .cards.cards-curved .card {
-  position: absolute;
-  transform-origin: bottom center;
-  transition: transform 0.4s ease-in, filter 0.3s ease-in-out, top 0.3s ease-out, z-index 0.3s ease-out;
-  cursor: pointer;
   top: 0;
+  position: absolute;
   z-index: auto;
+  cursor: pointer;
+  transform: rotate(calc(8.3333333333deg * var(--i)));
+  transform-origin: center bottom;
+  rotate: -35deg;
+  left: calc(38px * var(--i));
+  transition: top 0.2s;
 }
 #app .cards.cards-curved .card.select:hover {
   top: -2rem;

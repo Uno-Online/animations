@@ -28,10 +28,10 @@
 
             &.mount {
                 position: absolute;
-                left: 10rem; 
+                left: 10rem;
                 bottom: 2rem;
                 filter: grayscale(1);
-                opacity: .8;
+                opacity: 0.8;
             }
         }
     }
@@ -50,26 +50,25 @@
             img {
                 margin: 0 -40px;
             }
-            
+
             &.one {
                 rotate: 102deg;
                 align-self: baseline;
             }
-    
+
             &.two {
                 rotate: -102deg;
                 align-self: baseline;
             }
         }
-        
     }
-    
+
     .top {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    
+
     .inline {
         display: flex;
         flex-grow: 1;
@@ -81,47 +80,78 @@
         flex-direction: column;
         justify-content: space-between;
 
-        
         .main {
             align-self: center;
         }
     }
 
     .cards.cards-curved {
+        display: flex;
+        justify-content: center;
         contain: initial;
         position: relative;
         width: 610px;
         height: 220px;
         align-self: end;
-        // border: 2px solid red;
-        transition: opacity .5s ease-out, filter .4s ease-out;
-        opacity: .8;
+        border: 2px solid red;
+        transition: opacity 0.5s ease-out, filter 0.4s ease-out;
+        opacity: 0.8;
         filter: brightness(80%);
 
         &:hover {
             opacity: 1;
             filter: brightness(100%);
-
         }
 
         .deck {
-            position: relative;
+            position: absolute;
+            left: 15%;
         }
 
         .card {
-            // position: relative;
-            position: absolute;
-            transform-origin: bottom center;
-            transition: transform .4s ease-in, filter .3s ease-in-out, top .3s ease-out, z-index .3s ease-out;
-            cursor: pointer;
-            top: 0;
-            z-index: auto;
+            // top: 0;
+            // transition: top .2s;
+            // &.select:hover {
+            //     top: -2rem;
+            // }
             
+            // @function calc-angle($numcards, $i) {
+            //     $angle: (279 / $numcards) * ($i + 1) - (279 / 2 + 279 / $numcards / 2);
+            //     @return $angle;
+            // }
+            
+            // $numcards: calc(1 * var(--numCards));
+            // $i: calc(1 * var(--i));
+            // $angles: ();
+            // @for $j from 1 through $numcards {
+            //     $angle: (279 / $numcards) * ($j + 1) - (279 / 2 + 279 / $numcards / 2);
+            //     $angles: append($angles, $angle, comma);
+            // }
+            // transform: rotate(nth($angle-deg, $i));
+            // filter: brightness(0%);
+            // position: absolute;
+            // z-index: auto;
+            // cursor: pointer;
+            // transform: rotate(calc(50deg / 6 * $i));
+            // transform-origin: center bottom;
+            // rotate: -35deg;
+            // left: calc(38px * $i);
+
+            $arc: 8.3333333333deg;
+            top: 0;
+            position: absolute;
+            z-index: auto;
+            cursor: pointer;
+            transform: rotate(calc($arc * var(--i)));
+            transform-origin: center bottom;
+            rotate: -35deg;
+            left: calc(38px * var(--i));
+            transition: top .2s;
+
             &.select:hover {
-                // z-index:1!important;
                 top: -2rem;
             }
         }
+        
     }
-
 }
