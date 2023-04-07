@@ -12,23 +12,24 @@ gameStarted$.subscribe((value) => {
 
 class Animations {
     static userCardAnimation(target) {
-        const middleCard = document.querySelector('.middle .main .middle-card');
-        middleCard.dataset.lastIdx = cardIdx$.getValue();
+        const main = document.querySelector('.middle .main');
+        const maincard = document.querySelector('.all');
+        main.dataset.lastIdx = cardIdx$.getValue();
         target.dataset.idx = cardIdx$.getValue();
         
         const timeline = gsap.timeline();
-            timeline.to(target, {top: '-10rem', zIndex: cardIdx$.getValue()})
-            timeline.to(target, {duration: .3, opacity: 0, pointerEvents: 'none', onComplete: () => addCartToMain()});
+        target.style.setProperty('transition', 'none');
+        console.log(target)
+            timeline.to(target, {duration: 0, rotation: '0deg', transform: 'none'})
+            timeline.to(target, {duration: .2, top: '-40vh', left: '150px', ease: 'circ', position: 'fixed', zIndex: cardIdx$.getValue()})
+            timeline.to(target, {duration: .2, opacity:0, pointerEvents: 'none', onComplete: () => {addCartToMain()}});
         const timeline2 = gsap.timeline({paused: true});
-            timeline2.to(target, {top:0, ease: 'back', position: 'absolute', opacity: 1});
+            timeline2.to(target, {duration: .2, top:0, left:0, position: 'absolute', onComplete: () => {
+                target.style.opacity = 1
+            }});
 
         function addCartToMain() {
-            for(let child of middleCard.children) {
-                if(cardIdx$.getValue() != child.dataset.idx) {
-                    child.remove();
-                }
-            }
-            middleCard.prepend(target);
+            maincard.prepend(target);
             timeline2.resume();
         }
     }

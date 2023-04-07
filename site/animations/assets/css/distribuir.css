@@ -8,6 +8,9 @@
      -moz-user-select: none;
           user-select: none;
 }
+* html, * body {
+  height: 100%;
+}
 * body {
   box-shadow: inset 0px 0px 120px rgba(0, 0, 0, 0.7058823529);
   background-blend-mode: hard-light;
@@ -52,14 +55,16 @@
 }
 #app .user-cards {
   position: relative;
+  text-align: center;
 }
 #app .user-cards img {
   position: relative;
   margin: 0 -30px;
+  zoom: 0.7;
   filter: brightness(80%);
 }
 #app .user-cards.side {
-  top: 3rem;
+  top: 25vh;
 }
 #app .user-cards.side img {
   margin: 0 -40px;
@@ -89,6 +94,7 @@
 }
 #app .middle .main {
   display: flex;
+  position: relative;
   align-self: center;
   align-items: center;
   justify-content: center;
@@ -108,7 +114,6 @@
   display: flex;
   justify-content: center;
   contain: initial;
-  position: relative;
   width: 610px;
   height: 220px;
   align-self: end;
@@ -121,12 +126,13 @@
   filter: brightness(100%);
 }
 #app .cards.cards-curved .deck {
-  position: absolute;
-  left: 15%;
+  position: fixed;
+  left: 0;
+  transform: translateX(110px);
 }
 #app .cards.cards-curved .card {
   top: 0;
-  position: absolute;
+  position: fixed;
   z-index: auto;
   transition: top 0.2s ease-out, filter 0.2s ease-out 0.07s, transform 0.2s ease-in 0.5s, rotate 0.2s ease-in 0.5s, left 0.5s ease-in;
   left: 0;
@@ -162,4 +168,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.all {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-60px, -80px);
 }/*# sourceMappingURL=distribuir.css.map */

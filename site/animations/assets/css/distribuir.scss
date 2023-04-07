@@ -7,6 +7,10 @@
         user-select: none;
     }
 
+    html, body {
+        height: 100%;
+    }
+
     body {
         box-shadow: inset 0px 0px 120px #000000b4;
         background-blend-mode: hard-light;
@@ -61,15 +65,17 @@
 
     .user-cards {
         position: relative;
+        text-align: center;
 
         img {
             position: relative;
             margin: 0 -30px;
+            zoom: .7;
             filter: brightness(80%);
         }
 
         &.side {
-            top: 3rem;
+            top: 25vh;
             img {
                 margin: 0 -40px;
             }
@@ -105,7 +111,7 @@
 
         .main {
             display: flex;
-            // position: relative;
+            position: relative;
             align-self: center;
             align-items: center;
             justify-content: center;
@@ -128,7 +134,6 @@
         display: flex;
         justify-content: center;
         contain: initial;
-        position: relative;
         width: 610px;
         height: 220px;
         align-self: end;
@@ -143,14 +148,15 @@
         }
 
         .deck {
-            position: absolute;
-            left: 15%;
+            position: fixed;
+            left: 0;
+            transform: translateX(110px);
         }
 
         .card {
             $arc: 7.3333333333deg;
             top: 0;
-            position: absolute;
+            position: fixed;
             z-index: auto;
             // transform-origin: center bottom;
             transition: top 0.2s ease-out, filter 0.2s ease-out .07s, transform .2s ease-in .5s, rotate .2s ease-in .5s, left .5s ease-in;
@@ -196,4 +202,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.all {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60px, -80px);
 }
