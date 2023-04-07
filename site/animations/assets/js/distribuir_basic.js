@@ -3,6 +3,54 @@ const gameStarted$ = new reactive.BehaviorSubject(false);
 const cardIdx$ = new reactive.BehaviorSubject(0);
 gameStarted$.setState = (value) => gameStarted$.next(value);
 cardIdx$.setState = (value) => cardIdx$.next(value);
+
+const global = {
+    reactive: {
+        gameStarted: gameStarted$,
+        cardIdx: cardIdx$,
+    },
+    screens: {
+        current: {
+            width: window.screen.width,
+            height: window.screen.height,
+        },
+        fullHd: {
+            width: 1920,
+            height: 1080,
+        },
+        mobile: {
+            width: 375,
+            height: 667,
+        },
+        tablet: {
+            width: 768,
+            height: 1024,
+        },
+        laptop: {
+            width: 992,
+            height: 680,
+        },
+        desktop: {
+            width: 1200,
+            height: 800,
+        },
+        ultrawide: {
+            width: 2560,
+            height: 1080,
+        },
+        '4k': {
+            width: 3840,
+            height: 2160,
+        },
+        ultrawide4k: {
+            width: 5120,
+            height: 2160,
+        },
+    },
+};
+
+console.log('global', global);
+
 class Deck {
     constructor() {
         this.generateGameCards();
@@ -36,14 +84,12 @@ class Deck {
                 card.classList.add('spread');
                 if (i == cards.length - 1) {
                     console.log('game started');
-                    gameStarted$.setState(true);
+                    global.reactive.gameStarted.setState(true);
                 }
                 card.classList.remove('blocked');
                 card.classList.add('not-blocked');
             }, 1000);
         });
-
-        
     }
 
     generateGameCardsForUsers() {
@@ -71,7 +117,7 @@ class Deck {
         let bgImage = '';
         // bgImage += "url('assets/img/bg-1.png') repeat";
         // bgImage += "url('assets/img/pattern02.png') repeat,";
-        bgImage += "url('assets/img/pattern01.png') repeat";
+        bgImage += "url('assets/img/pattern01 (3).png') repeat";
         // bgImage += "url('assets/img/Oct002.svg') no-repeat center 50%/cover";
         document.body.style.setProperty('background', `${bgImage}, ${bg}`);
         // prevent drag images
@@ -86,4 +132,4 @@ const getDeck = (value = '') => document.querySelectorAll(`.cards.cards-curved .
 const deck = getDeck()[0];
 document.querySelector('.mount').addEventListener('click', () => {
     new Deck();
-})
+});
