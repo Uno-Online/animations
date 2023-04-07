@@ -113,9 +113,13 @@
             width: -webkit-fill-available;
             
             .middle-card {
+                background: url('../img/white-card.png')no-repeat;
                 position: relative;
-                top: -1rem;
+                top: -7rem;
                 z-index: -2;
+                left: 42%;
+                width: 125px;
+                height: 179px;
             }
         }
     }

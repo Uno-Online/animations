@@ -10,12 +10,11 @@ cardIdx$.setState = (value) => {
 };
 
 class Basic {
-
     constructor() {
         this.generateGameCards();
         this.generateBg();
     }
-    
+
     generateGameCards() {
         // generate game cards
         const userBoard = document.querySelector('.cards.cards-curved .deck');
@@ -41,14 +40,12 @@ class Basic {
                 card.classList.add('select');
                 card.setAttribute('name', originalCards[i].name);
                 card.classList.add('spread');
-                setTimeout(() => {
-                    if(i == cards.length - 1) {
-                        console.log('finished');
-                        gameStarted$.setState(true);
-                    }
-                    card.classList.remove('blocked');
-                    card.classList.add('not-blocked');
-                }, 500)
+                if (i == cards.length - 1) {
+                    console.log('game started');
+                    gameStarted$.setState(true);
+                }
+                card.classList.remove('blocked');
+                card.classList.add('not-blocked');
             }, 1000);
         });
 
@@ -62,7 +59,6 @@ class Basic {
         });
     }
 
-    
     generateBg() {
         let randomNumber = Math.floor(Math.random() * 5);
 
