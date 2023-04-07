@@ -20,6 +20,12 @@
   justify-content: space-between;
   flex-direction: column;
 }
+#app .blocked {
+  cursor: not-allowed;
+}
+#app .not-blocked {
+  cursor: pointer;
+}
 #app .controls-bottom {
   display: flex;
   flex-direction: row;
@@ -118,7 +124,6 @@
   top: 0;
   position: absolute;
   z-index: auto;
-  cursor: pointer;
   transition: top 0.2s ease-out, filter 0.2s ease-out 0.07s, transform 0.2s ease-in 0.5s, rotate 0.2s ease-in 0.5s, left 0.5s ease-in;
   left: 0;
 }

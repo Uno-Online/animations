@@ -21,6 +21,14 @@
     justify-content: space-between;
     flex-direction: column;
 
+    .blocked {
+        cursor: not-allowed;
+    }
+
+    .not-blocked {
+        cursor: pointer;
+    }
+
     .controls-bottom {
         display: flex;
         flex-direction: row;
@@ -140,7 +148,6 @@
             top: 0;
             position: absolute;
             z-index: auto;
-            cursor: pointer;
             // transform-origin: center bottom;
             transition: top 0.2s ease-out, filter 0.2s ease-out .07s, transform .2s ease-in .5s, rotate .2s ease-in .5s, left .5s ease-in;
             left: 0;
