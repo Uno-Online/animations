@@ -30,11 +30,17 @@
 
     // generate bg
     let randomNumber = Math.floor(Math.random() * 5);
-    let bg = randomNumber == 0 ? 'radial-gradient(50% 50% at 50% 50%, #FFF5B1 21.87%, #E3BF00 100%'
-                : randomNumber == 1 ? 'radial-gradient(50% 50% at 50% 50%, #43F555 0%, #01A54E 100%)' 
-                : randomNumber == 2 ? 'radial-gradient(50% 50% at 50% 50%, #F97E84 23.44%, #ED1A24 100%)'  
+    
+    let bg = randomNumber == 0 ? 'radial-gradient(50% 50% at 50% 50%, rgb(183 175 125) 21.87%, rgb(149 129 25) 100%'
+                : randomNumber == 1 ? 'radial-gradient(50% 50% at 50% 50%, #43F555 0%, rgb(33 110 69) 100%)' 
+                : randomNumber == 2 ? 'radial-gradient(50% 50% at 50% 50%, #F97E84 23.44%, rgb(181 16 23) 100%)'  
                 : 'radial-gradient(50% 50% at 50% 50%, #65C0E3 0%, #3E6BD9 100%)';
-    document.body.style.setProperty('background', bg);
+    let bgImage = ''; 
+        // bgImage += "url('assets/img/bg-1.png') repeat";
+        // bgImage += "url('assets/img/pattern02.png') repeat,";
+        bgImage += "url('assets/img/pattern01.png') repeat";
+        // bgImage += "url('assets/img/Oct002.svg') no-repeat center 50%/cover";
+    document.body.style.setProperty('background', `${bgImage}, ${bg}`);
 
     // no drag images
     document.querySelectorAll('img').forEach(img => {

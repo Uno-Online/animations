@@ -3,11 +3,14 @@
   margin: 0;
   box-sizing: border-box;
 }
-
-img {
+* img {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+* body {
+  box-shadow: inset 0px 0px 120px rgba(0, 0, 0, 0.7058823529);
+  background-blend-mode: hard-light;
 }
 
 #app {
