@@ -1,15 +1,9 @@
 const reactive = rxjs;
-
 const gameStarted$ = new reactive.BehaviorSubject(false);
 const cardIdx$ = new reactive.BehaviorSubject(0);
-gameStarted$.setState = (value) => {
-    gameStarted$.next(value);
-};
-cardIdx$.setState = (value) => {
-    cardIdx$.next(value);
-};
-
-class Basic {
+gameStarted$.setState = (value) => gameStarted$.next(value);
+cardIdx$.setState = (value) => cardIdx$.next(value);
+class Deck {
     constructor() {
         this.generateGameCards();
         this.generateBg();
@@ -49,6 +43,10 @@ class Basic {
             }, 1000);
         });
 
+        
+    }
+
+    generateGameCardsForUsers() {
         // generate game cards for another users
         const userCards = document.querySelectorAll('.user-cards');
         userCards.forEach((user) => {
@@ -83,4 +81,9 @@ class Basic {
     }
 }
 
-new Basic();
+new Deck().generateGameCardsForUsers();
+const getDeck = (value = '') => document.querySelectorAll(`.cards.cards-curved .deck ${value}`);
+const deck = getDeck()[0];
+document.querySelector('.mount').addEventListener('click', () => {
+    new Deck();
+})
