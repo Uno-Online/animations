@@ -36,8 +36,8 @@ class Animations {
             timeline2.to(target, {duration: .2, ease: 'circ', opacity: 1})
         function addCartToMain() {
             timeline2.resume();
-            const middleCardsQuantity = middle.children.length;
             middle.append(target);
+            const middleCardsQuantity = middle.children.length;
             // remove early card added 
             if(middleCardsQuantity >= 2) {
                 middle.children[0].remove();
