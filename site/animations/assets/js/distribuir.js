@@ -12,8 +12,6 @@
 
         userBoard.appendChild(card);
         
-        card.addEventListener('click', teste);
-        
         //fx
         setTimeout(() => {
             card.classList.add('uno-card');
@@ -48,10 +46,6 @@
     });
     
 })();
-
-function teste() {
-    this.classList.add('teste');
-}
 
 class Distribuir {
 

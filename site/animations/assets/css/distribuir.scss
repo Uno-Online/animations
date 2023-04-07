@@ -136,35 +136,7 @@
         }
 
         .card {
-            // top: 0;
-            // transition: top .2s;
-            // &.select:hover {
-            //     top: -2rem;
-            // }
-
-            // @function calc-angle($numcards, $i) {
-            //     $angle: (279 / $numcards) * ($i + 1) - (279 / 2 + 279 / $numcards / 2);
-            //     @return $angle;
-            // }
-
-            // $numcards: calc(1 * var(--numCards));
-            // $i: calc(1 * var(--i));
-            // $angles: ();
-            // @for $j from 1 through $numcards {
-            //     $angle: (279 / $numcards) * ($j + 1) - (279 / 2 + 279 / $numcards / 2);
-            //     $angles: append($angles, $angle, comma);
-            // }
-            // transform: rotate(nth($angle-deg, $i));
-            // filter: brightness(0%);
-            // position: absolute;
-            // z-index: auto;
-            // cursor: pointer;
-            // transform: rotate(calc(50deg / 6 * $i));
-            // transform-origin: center bottom;
-            // rotate: -35deg;
-            // left: calc(38px * $i);
-
-            $arc: 8.3333333333deg;
+            $arc: 7.3333333333deg;
             top: 0;
             position: absolute;
             z-index: auto;
@@ -213,20 +185,4 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
-
-.teste {
-    animation: addCard 200ms ease;
-}
-
-// respira nega, foi só pra testa
-// ...
-@keyframes addCard {
-    from {
-
-    }
-    to {
-        bottom: 50%;
-        left: 50%;
-    }
 }
