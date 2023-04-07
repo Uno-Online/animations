@@ -15,12 +15,6 @@ gameStarted$.subscribe((value) => {
 class Animations {
     static userCardAnimation(target) {
         const timeline = gsap.timeline();
-        timeline.to(target, { top: '-320px', left: '160px', rotation: '0deg', zIndex: cardIdx$.getValue() });
-        timeline.to(target, {
-            transform: 'none!important',
-            onComplete: () => {
-                target.style.transform = 'none';
-            },
-        });
+            timeline.to(target, { top: '-320px', left: '160px', rotation: '0deg', transform: 'none', zIndex: cardIdx$.getValue() });
     }
 }

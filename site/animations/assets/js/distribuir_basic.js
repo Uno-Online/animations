@@ -5,7 +5,7 @@ const cardIdx$ = new reactive.BehaviorSubject(0);
 gameStarted$.setState = (value) => {
     gameStarted$.next(value);
 };
-cardIdx$.increment = () => {
+cardIdx$.setState = (value) => {
     cardIdx$.next(value);
 };
 
